@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=7" />
+  <link rel="stylesheet" href="styles.css?v=8" />
 </head>
 <body>
   <!-- Header -->
@@ -189,7 +189,12 @@
             <p>One memorable line turned a single truck into the largest junk-removal service in North America — the number was the marketing engine.</p>
           </button>
         </div>
-        <p class="photo-credits">Photos: <a href="https://commons.wikimedia.org/wiki/File:1-800_Flowers_HQ_1_OCR_Carle_Pl_jeh.jpg" rel="noopener" target="_blank">Jim Henderson</a> (CC BY 3.0) · <a href="https://commons.wikimedia.org/wiki/File:Stanley_Steemer_Van.jpg" rel="noopener" target="_blank">osseous</a> (CC BY 2.0) · <a href="https://commons.wikimedia.org/wiki/File:1800GOTJUNKTruck.jpg" rel="noopener" target="_blank">Raysonho</a> (CC0), via Wikimedia Commons. Trademarks belong to their owners; shown as editorial examples.</p>
+        <!-- DEVS: photo attribution required at launch (CC BY licenses) — place in site-wide
+             footer fine print or a /credits page:
+             img/1800-flowers-hq-sign.jpg — Jim Henderson, CC BY 3.0, commons.wikimedia.org/wiki/File:1-800_Flowers_HQ_1_OCR_Carle_Pl_jeh.jpg
+             img/1800-steemer-van.jpg — osseous, CC BY 2.0, commons.wikimedia.org/wiki/File:Stanley_Steemer_Van.jpg
+             img/1800-got-junk-truck.jpg — Raysonho, CC0 (no attribution required), commons.wikimedia.org/wiki/File:1800GOTJUNKTruck.jpg -->
+
       </div>
     </section>
 
@@ -532,11 +537,11 @@
 
   <!-- ?v= mirrors the styles.css version — bump BOTH whenever any JS or CSS changes,
        or GitHub Pages/browser caches keep serving the old files. -->
-  <script src="countries.js?v=7"></script>   <!-- country calling codes for the picker -->
-  <script src="words.js?v=7"></script>       <!-- curated marketing words (ranked first) -->
-  <script src="dictionary.js?v=7"></script>  <!-- YOUR custom dictionary (ranked next) -->
-  <script src="words-extra.js?v=7"></script> <!-- generic system breadth list (ranked last) -->
-  <script src="inventory.js?v=7"></script>   <!-- YOUR for-sale numbers -->
-  <script src="app.js?v=7"></script>
+  <script src="countries.js?v=8"></script>   <!-- country calling codes for the picker -->
+  <script src="words.js?v=8"></script>       <!-- curated marketing words (ranked first) -->
+  <script src="dictionary.js?v=8"></script>  <!-- YOUR custom dictionary (ranked next) -->
+  <script src="words-extra.js?v=8"></script> <!-- generic system breadth list (ranked last) -->
+  <script src="inventory.js?v=8"></script>   <!-- YOUR for-sale numbers -->
+  <script src="app.js?v=8"></script>
 </body>
 </html>
