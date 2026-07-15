@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanity Phone Number Generator &amp; Decoder | PhoneNumbers.com</title>
+  <meta name="description" content="See what your phone number spells — or turn a word into a number. Free vanity phone number generator and decoder from PhoneNumbers.com, plus premium numbers for sale." />
+  <!-- NOTE: update the domain/path below to the page's real URL before launch. -->
+  <link rel="canonical" href="https://www.phonenumbers.com/en-us/tools/vanity-number-generator" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PhoneNumbers.com" />
+  <meta property="og:title" content="Vanity Phone Number Generator & Decoder | PhoneNumbers.com" />
+  <meta property="og:description" content="See what your phone number spells — or turn a word into a number. Free vanity phone number generator and decoder from PhoneNumbers.com." />
+  <meta property="og:url" content="https://www.phonenumbers.com/en-us/tools/vanity-number-generator" />
+  <meta property="og:image" content="https://www.phonenumbers.com/og/vanity-number-generator.png" />
+  <meta property="og:image:alt" content="PhoneNumbers.com vanity phone number generator" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Vanity Phone Number Generator & Decoder | PhoneNumbers.com" />
+  <meta name="twitter:description" content="See what your phone number spells — or turn a word into a number. Free vanity number generator and decoder." />
+  <meta name="twitter:image" content="https://www.phonenumbers.com/og/vanity-number-generator.png" />
+
+  <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;%F0%9F%93%9E&lt;/text&gt;&lt;/svg&gt;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="wm-phone">phone</span><span class="wm-numbers">Numbers</span><span class="wm-com">.com</span>
+    </a>
+    <nav class="nav-links">
+      <a href="https://www.phonenumbers.com/en-us">Home</a>
+      <a href="https://www.phonenumbers.com/en-us/search">Numbers</a>
+      <a class="active" href="https://www.phonenumbers.com/en-us/tools/vanity-number-generator">Tools</a>
+      <a href="https://www.phonenumbers.com/en-us/about/faq">Resources</a>
+    </nav>
+    <div class="nav-right">
+      <span class="nav-icon" title="Account" aria-hidden="true">&#128100;</span>
+      <span class="nav-icon" title="Cart" aria-hidden="true">&#128722;</span>
+      <span class="nav-flag">&#127482;&#127480; US</span>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <p class="overline">Vanity Number Decoder</p>
+      <h1>Find the words<br /><span class="hl">hiding in your number.</span></h1>
+      <p class="hero-sub">
+        Drop in any phone number and PhoneNumbers.com reveals the words and catchy
+        phrases your digits can spell — the same trick behind classics like 1-800-FLOWERS.
+      </p>
+      <ul class="badges">
+        <li><span class="tick">✓</span> Free to use</li>
+        <li><span class="tick">✓</span> Answers in a snap</li>
+        <li><span class="tick">✓</span> Private — stays in your browser</li>
+      </ul>
+    </section>
+
+    <!-- Decoder tool -->
+    <section class="tool" id="tool">
+      <div class="mode-switch" role="tablist">
+        <button id="mode-decode" class="mode active" type="button" role="tab">Number → Words</button>
+        <button id="mode-spell" class="mode" type="button" role="tab">Word → Number</button>
+      </div>
+
+      <div class="tool-card">
+        <!-- Decode mode -->
+        <div id="panel-decode" class="tool-row">
+          <div class="cc-select" id="ccSelect">
+            <button type="button" class="cc-btn" id="ccBtn" aria-haspopup="listbox" aria-expanded="false" aria-label="Select country code">
+              <span class="cc-flag" id="ccFlag">🇺🇸</span>
+              <span class="cc-dial" id="ccDial">+1</span>
+              <span class="cc-caret" aria-hidden="true">▾</span>
+            </button>
+            <div class="cc-panel" id="ccPanel" hidden>
+              <input type="text" class="cc-search" id="ccSearch" placeholder="Search country or code" autocomplete="off" />
+              <ul class="cc-list" id="ccList" role="listbox"></ul>
+            </div>
+          </div>
+          <input id="phoneInput" class="tool-input" type="tel" inputmode="tel"
+                 placeholder="Enter your phone number" autocomplete="off" />
+          <button id="clearPhone" class="clear-btn" type="button" aria-label="Clear" title="Clear" hidden>&times;</button>
+          <button id="findBtn" class="cta" type="button">Find words</button>
+        </div>
+
+        <!-- Spell mode -->
+        <div id="panel-spell" class="tool-row" hidden>
+          <input id="wordInput" class="tool-input solo" type="text"
+                 placeholder="Type a word or phrase, e.g. PLUMBER" autocomplete="off" />
+          <button id="clearWord" class="clear-btn" type="button" aria-label="Clear" title="Clear" hidden>&times;</button>
+          <button id="spellBtn" class="cta" type="button">Get number</button>
+        </div>
+      </div>
+
+      <div class="results-head">
+        <p id="toolNote" class="tool-note">Enter a number and tap Find words to decode it.</p>
+        <label id="perPageWrap" class="per-page" hidden>
+          Show
+          <select id="pageSize" aria-label="Results per page">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            <option value="0">All</option>
+          </select>
+          per page
+        </label>
+      </div>
+      <div id="inventoryBanner" class="inv-banner" hidden></div>
+      <div id="results" class="results"></div>
+      <div id="pagination" class="pagination" hidden></div>
+      <div id="spellResult" class="spell-result" hidden></div>
+    </section>
+
+    <!-- Famous numbers -->
+    <section class="section alt" id="famous">
+      <h2>Famous 1-800 numbers <span class="hl">that became the brand</span></h2>
+      <p class="section-sub">Iconic vanity numbers — from 1-800-FLOWERS to 1-800-GOT-JUNK — turned a phone line into instant recall. Tap any example to decode it.</p>
+      <div class="cards three">
+        <button class="info-card" type="button" data-decode="1-800-356-9377">
+          <div class="emoji">💐</div>
+          <h3>1-800-FLOWERS</h3>
+          <p class="stat">A flower-delivery icon since the '80s</p>
+          <p>Made ordering as easy as remembering a single word — the number itself became the brand.</p>
+        </button>
+        <button class="info-card" type="button" data-decode="1-800-266-8228">
+          <div class="emoji">📇</div>
+          <h3>1-800-CONTACTS</h3>
+          <p class="stat">Proof that the number can be the product</p>
+          <p>Turned a simple product into a household name people recall faster than any URL.</p>
+        </button>
+        <button class="info-card" type="button" data-decode="1-800-468-5865">
+          <div class="emoji">🚛</div>
+          <h3>1-800-GOT-JUNK</h3>
+          <p class="stat">One catchy line, a continent-wide business</p>
+          <p>A catchy number helped a college side-hustle grow into a continent-wide service.</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section" id="how">
+      <h2>How it works</h2>
+      <p class="section-sub">From digits to words in three quick steps.</p>
+      <div class="cards three">
+        <div class="step-card">
+          <div class="step-icon">🔍</div>
+          <h3>Enter a number</h3>
+          <p>Pop any phone number into the box above. No account, no setup — go in seconds.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">✨</div>
+          <h3>Let it decode</h3>
+          <p>PhoneNumbers.com maps each digit to its letters and surfaces every word it can find.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">📣</div>
+          <h3>Make it yours</h3>
+          <p>Like a result? Copy it, share it, or claim it as your next vanity line.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why it works -->
+    <section class="section alt" id="why">
+      <h2>The psychology of a <span class="hl">number worth remembering</span></h2>
+      <p class="section-sub">These numbers stick for a reason — here's what's really going on.</p>
+      <div class="cards three">
+        <div class="stat-card">
+          <div class="stat-top"><span class="stat-icon">💡</span><span class="stat-big">75%</span></div>
+          <h3>Easier to recall</h3>
+          <p>Words lodge in memory far better than loose digits — our brains reach for meaning first.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span class="stat-icon">📈</span><span class="stat-big">3×</span></div>
+          <h3>More calls in</h3>
+          <p>Switching to a word-based number tends to push inbound calls noticeably higher.</p>
+        </div>
+        <div class="stat-card">
+          <div class="stat-top"><span class="stat-icon">🤝</span><span class="stat-big">100%</span></div>
+          <h3>Reads as legit</h3>
+          <p>A clean, spellable number looks established — and easy to reach feels easy to trust.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inspiration showcase -->
+    <section class="showcase" id="inspiration">
+      <div class="showcase-inner">
+        <p class="overline">By industry</p>
+        <h2>Numbers that <span class="hl">mean business.</span></h2>
+        <p class="section-sub">A memorable line for every category. Tap one to run it through the decoder.</p>
+        <div class="cards three">
+          <button class="show-card" type="button" data-decode="1-800-758-6237">
+            <span class="show-ind">Home Services</span>
+            <span class="show-num">1-800-<span class="show-word">PLUMBER</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+          <button class="show-card" type="button" data-decode="1-800-529-9377">
+            <span class="show-ind">Legal</span>
+            <span class="show-num">1-800-<span class="show-word">LAWYERS</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+          <button class="show-card" type="button" data-decode="1-800-336-8478">
+            <span class="show-ind">Healthcare</span>
+            <span class="show-num">1-800-<span class="show-word">DENTIST</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+          <button class="show-card" type="button" data-decode="1-800-639-4663">
+            <span class="show-ind">Real Estate</span>
+            <span class="show-num">1-800-<span class="show-word">NEW-HOME</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+          <button class="show-card" type="button" data-decode="1-877-227-4669">
+            <span class="show-ind">Finance</span>
+            <span class="show-num">1-877-<span class="show-word">CASH-NOW</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+          <button class="show-card" type="button" data-decode="1-800-227-9274">
+            <span class="show-ind">Auto</span>
+            <span class="show-num">1-800-<span class="show-word">CAR-WASH</span></span>
+            <span class="show-go">Decode this number →</span>
+          </button>
+        </div>
+        <a class="showcase-cta" href="https://www.phonenumbers.com/en-us/search">Browse the full marketplace →</a>
+      </div>
+    </section>
+
+    <!-- FAQ (mirrored by FAQPage schema) -->
+    <section class="section alt faq" id="faq">
+      <p class="overline">FAQ</p>
+      <h2>Vanity number <span class="hl">questions, answered</span></h2>
+      <p class="section-sub">Everything about decoding, spelling, and buying memorable phone numbers.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What is a vanity phone number?</h3>
+          <p>A vanity number spells a word or phrase on the phone keypad — like 1-800-FLOWERS — which makes it far easier to remember and share than a string of random digits.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What does my phone number spell?</h3>
+          <p>Type your number into the decoder above. We map each digit to its keypad letters (2=ABC, 3=DEF, and so on) and surface every real word or phrase your number can spell.</p>
+        </div>
+        <div class="faq-item">
+          <h3>How does the phone number decoder work?</h3>
+          <p>Digits 2 through 9 each map to three or four letters. The tool checks those letter combinations against a large dictionary to find memorable words, then ranks the best vanity spellings.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I turn a word into a phone number?</h3>
+          <p>Yes. Switch to “Word → Number” and type any word or phrase to see exactly which digits it dials on the keypad.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Are these vanity numbers available to buy?</h3>
+          <p>Numbers in our inventory are flagged “For sale” with pricing. PhoneNumbers.com sells premium vanity, local, and toll-free numbers with same-day activation.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Is the vanity number tool free?</h3>
+          <p>Yes. The decoder is 100% free, needs no sign-up, and runs entirely in your browser.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand"><span class="wm-phone">phone</span><span class="wm-numbers">Numbers</span><span class="wm-com">.com</span></span>
+        <p class="footer-tag">Premium vanity, local, and toll-free phone numbers for US businesses. Same-day activation. No long-term contracts.</p>
+        <div class="footer-pills">
+          <span class="footer-pill">&#127482;&#127480; US</span>
+          <span class="footer-pill">&#127464;&#127462; Canada</span>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Browse Numbers</h4>
+        <a href="https://www.phonenumbers.com/en-us/search">All Numbers</a>
+        <a href="https://www.phonenumbers.com/en-us/search">Local Numbers</a>
+        <a href="https://www.phonenumbers.com/en-us/area-codes/all-area-codes">Area Codes</a>
+        <a href="https://www.phonenumbers.com/en-us/search">Vanity Numbers</a>
+        <a href="https://www.phonenumbers.com/en-us/search?tf=true">Toll-Free 1-800</a>
+        <a href="https://www.phonenumbers.com/en-us/search">Pattern Numbers</a>
+      </div>
+      <div class="footer-col">
+        <h4>International</h4>
+        <a href="https://www.phonenumbers.com/en-us/country-codes/all-countries">Canada Numbers</a>
+        <a href="https://www.phonenumbers.com/en-us/country-codes/all-countries">UK Numbers</a>
+        <a href="https://www.phonenumbers.com/en-us/country-codes/all-countries">Other Countries</a>
+      </div>
+      <div class="footer-col">
+        <h4>Tools &amp; Resources</h4>
+        <a href="https://www.phonenumbers.com/en-us/tools/vanity-number-generator">Number Spell Tool</a>
+        <a href="https://www.phonenumbers.com/en-us/tools/number-validation">Number Valuation</a>
+        <a href="https://www.phonenumbers.com/en-us/about/contact">Get a Quote</a>
+        <a href="https://www.phonenumbers.com/en-us/about/faq">How It Works</a>
+        <a href="https://www.phonenumbers.com/en-us/about/contact">Sell Your Number</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="https://www.phonenumbers.com/en-us/about/contact">Contact Us</a>
+        <a href="https://www.phonenumbers.com/en-us">About Us</a>
+        <a href="https://www.phonenumbers.com/en-us">Privacy Policy</a>
+        <a href="https://www.phonenumbers.com/en-us">Terms of Service</a>
+        <a href="https://www.phonenumbers.com/en-us">Refund Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 PhoneNumbers.com &middot; All rights reserved</span>
+      <span class="footer-legal"><a href="https://www.phonenumbers.com/en-us">Privacy</a><a href="https://www.phonenumbers.com/en-us">Terms</a><a href="https://www.phonenumbers.com/en-us/about/contact">Contact</a></span>
+    </div>
+  </footer>
+
+  <!-- Structured data. Update domain/paths to the real URL before launch. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.phonenumbers.com/#organization",
+        "name": "PhoneNumbers.com",
+        "url": "https://www.phonenumbers.com/",
+        "logo": "https://www.phonenumbers.com/logo.png"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.phonenumbers.com/#website",
+        "url": "https://www.phonenumbers.com/",
+        "name": "PhoneNumbers.com",
+        "publisher": { "@id": "https://www.phonenumbers.com/#organization" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://www.phonenumbers.com/en-us/search?q={search_term_string}"
+          },
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebApplication",
+        "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#app",
+        "name": "Vanity Phone Number Generator & Decoder",
+        "url": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Decode any phone number into the words it spells, or turn a word into a phone number.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "Decode a phone number into vanity words",
+          "Spell a word or phrase into a phone number",
+          "Flags premium numbers available for sale"
+        ],
+        "publisher": { "@id": "https://www.phonenumbers.com/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#webpage",
+        "url": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator",
+        "name": "Vanity Phone Number Generator & Decoder",
+        "description": "See what your phone number spells, or turn a word into a number. Free vanity phone number generator and decoder from PhoneNumbers.com.",
+        "image": "https://www.phonenumbers.com/og/vanity-number-generator.png",
+        "inLanguage": "en-US",
+        "isPartOf": { "@id": "https://www.phonenumbers.com/#website" },
+        "about": { "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#app" },
+        "breadcrumb": { "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#breadcrumb" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.phonenumbers.com/en-us" },
+          { "@type": "ListItem", "position": 2, "name": "Vanity Number Generator", "item": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.phonenumbers.com/en-us/tools/vanity-number-generator#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is a vanity phone number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A vanity number spells a word or phrase on the phone keypad — like 1-800-FLOWERS — which makes it far easier to remember and share than a string of random digits." }
+          },
+          {
+            "@type": "Question",
+            "name": "What does my phone number spell?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Type your number into the decoder. We map each digit to its keypad letters (2=ABC, 3=DEF, and so on) and surface every real word or phrase your number can spell." }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the phone number decoder work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Digits 2 through 9 each map to three or four letters. The tool checks those letter combinations against a large dictionary to find memorable words, then ranks the best vanity spellings." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I turn a word into a phone number?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Switch to Word to Number and type any word or phrase to see exactly which digits it dials on the keypad." }
+          },
+          {
+            "@type": "Question",
+            "name": "Are these vanity numbers available to buy?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Numbers in our inventory are flagged For sale with pricing. PhoneNumbers.com sells premium vanity, local, and toll-free numbers with same-day activation." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the vanity number tool free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The decoder is 100% free, needs no sign-up, and runs entirely in your browser." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <script src="countries.js"></script>   <!-- country calling codes for the picker -->
+  <script src="words.js"></script>       <!-- curated marketing words (ranked first) -->
+  <script src="dictionary.js"></script>  <!-- YOUR custom dictionary (ranked next) -->
+  <script src="words-extra.js"></script> <!-- generic system breadth list (ranked last) -->
+  <script src="inventory.js"></script>   <!-- YOUR for-sale numbers -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <circle cx="1090" cy="110" r="340" fill="#5b3fe8" opacity="0.06"/>
+  <circle cx="1180" cy="600" r="240" fill="#5b3fe8" opacity="0.05"/>
+
+  <!-- wordmark -->
+  <text x="72" y="100" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="700">
+    <tspan font-style="italic" fill="#0a0f1e">phone</tspan><tspan fill="#5b3fe8">Numbers</tspan><tspan font-style="italic" fill="#0a0f1e" font-size="30">.com</tspan>
+  </text>
+
+  <!-- overline -->
+  <text x="74" y="208" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="4" fill="#5b3fe8">VANITY NUMBER DECODER</text>
+
+  <!-- headline -->
+  <text x="70" y="318" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="500" fill="#0a0f1e">What does your</text>
+  <text x="70" y="432" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="500"><tspan fill="#0a0f1e">number </tspan><tspan fill="#5b3fe8">spell?</tspan></text>
+
+  <!-- example chip -->
+  <rect x="74" y="476" rx="16" ry="16" width="586" height="90" fill="#f3f1fe" stroke="#ddd6fb" stroke-width="2"/>
+  <text x="106" y="535" font-family="Georgia, 'Times New Roman', serif" font-size="48" font-weight="700"><tspan fill="#0a0f1e">1-800-</tspan><tspan fill="#5b3fe8">FLOWERS</tspan></text>
+
+  <!-- tagline -->
+  <text x="78" y="602" font-family="Helvetica, Arial, sans-serif" font-size="26" fill="#6b7280">Free phone number spelling tool &#183; PhoneNumbers.com</text>
+
+  <!-- keypad accent (right side) -->
+  <g transform="translate(815,360)" font-family="Helvetica, Arial, sans-serif">
+    <g>
+      <rect x="0" y="0" width="92" height="92" rx="16" fill="#5b3fe8"/>
+      <text x="46" y="50" text-anchor="middle" font-size="34" font-weight="700" fill="#ffffff">3</text>
+      <text x="46" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#cfc6fb" letter-spacing="2">DEF</text>
+    </g>
+    <g transform="translate(108,0)">
+      <rect x="0" y="0" width="92" height="92" rx="16" fill="#efeefe"/>
+      <text x="46" y="50" text-anchor="middle" font-size="34" font-weight="700" fill="#0a0f1e">5</text>
+      <text x="46" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#5b3fe8" letter-spacing="2">JKL</text>
+    </g>
+    <g transform="translate(216,0)">
+      <rect x="0" y="0" width="92" height="92" rx="16" fill="#efeefe"/>
+      <text x="46" y="50" text-anchor="middle" font-size="34" font-weight="700" fill="#0a0f1e">6</text>
+      <text x="46" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#5b3fe8" letter-spacing="2">MNO</text>
+    </g>
+  </g>
+</svg>

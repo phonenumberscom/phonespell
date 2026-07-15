@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Update to your real domain before launch.
+Sitemap: https://www.phonenumbers.com/sitemap.xml
