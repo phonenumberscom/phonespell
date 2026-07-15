@@ -30,4 +30,5 @@
    ============================================================ */
 var CUSTOM_WORDS = [
   // 👇 paste your dictionary words here
+  "steemer", // 783-3637 — lets the 1-800-STEEMER example card decode
 ];
