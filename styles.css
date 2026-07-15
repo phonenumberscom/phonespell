@@ -133,6 +133,20 @@ nav.main a.simple:hover,nav.main a.simple.active{color:var(--ac)}
 .result-number .dash{color:var(--ink-40)}
 .result-meta{margin-top:6px;font-size:12px;color:var(--ink-58)}
 
+/* ---------- Scene result cards (billboard / van / storefront) ---------- */
+.result.scene{padding:14px}
+.scene-art{line-height:0}
+.scene-art svg{width:100%;height:auto;border-radius:12px;display:block}
+.result.scene-full{grid-column:1 / -1;display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+.result.scene-full .scene-body{padding:6px 10px 6px 0}
+.result.scene-full .result-number{font-size:23px}
+.result.scene-half{display:flex;flex-direction:column;gap:13px}
+.result.scene-half .scene-body{padding:0 8px 6px}
+@media (max-width:600px){
+  .result.scene-full{grid-template-columns:1fr;gap:13px}
+  .result.scene-full .scene-body{padding:0 8px 6px}
+}
+
 /* ---------- Pagination ---------- */
 .pagination{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin-top:18px}
 .page-btn{min-width:38px;height:38px;padding:0 12px;border:1px solid var(--glass-br);background:var(--glass);color:var(--ink);font:600 14px var(--sans);border-radius:10px;cursor:pointer;transition:.15s ease}
