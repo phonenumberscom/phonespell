@@ -411,107 +411,6 @@
     return card;
   }
 
-  // --- Scene cards: draw the top results as real-world vanity signage ---
-  function sceneSegs(parts, s) {
-    const out = [];
-    if (parts.country) out.push({ t: countryLabel(parts) + "-", cls: "mut" });
-    if (parts.area) out.push({ t: parts.area + "-", cls: "mut" });
-    s.segs.forEach(function (seg, i) {
-      if (i > 0) out.push({ t: "-", cls: "mut" });
-      out.push({ t: seg.text, cls: seg.type === "word" ? "word" : "num" });
-    });
-    return out;
-  }
-
-  function svgEsc(t) {
-    return String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-  }
-
-  // Centered mono text sized to fit, word segments tinted.
-  function sceneText(segs, x, y, maxW, maxFont, palette) {
-    const str = segs.map(function (s) { return s.t; }).join("");
-    const fs = Math.max(11, Math.min(maxFont, Math.floor(maxW / (str.length * 0.64))));
-    const spans = segs.map(function (s) {
-      return '<tspan fill="' + palette[s.cls] + '">' + svgEsc(s.t) + '</tspan>';
-    }).join("");
-    return '<text x="' + x + '" y="' + y + '" text-anchor="middle" dominant-baseline="middle" ' +
-      'font-family="IBM Plex Mono,Menlo,monospace" font-weight="600" font-size="' + fs + '">' +
-      spans + '</text>';
-  }
-
-  var SCENE_DARK = { word: "#A9A6F5", num: "#FFFFFF", mut: "rgba(255,255,255,.55)" };
-  var SCENE_LIGHT = { word: "#4F46E5", num: "#10133A", mut: "rgba(16,19,58,.45)" };
-
-  function sceneSvg(kind, segs) {
-    if (kind === "billboard") {
-      return '<svg viewBox="0 0 560 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">' +
-        '<defs><linearGradient id="sbsky" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0" stop-color="#DFE1F7"/><stop offset="1" stop-color="#F1F2FB"/></linearGradient>' +
-        '<radialGradient id="sbglow" cx=".5" cy=".28" r=".55">' +
-        '<stop offset="0" stop-color="rgba(124,108,255,.28)"/><stop offset="1" stop-color="rgba(124,108,255,0)"/></radialGradient></defs>' +
-        '<rect width="560" height="250" rx="14" fill="url(#sbsky)"/>' +
-        '<rect width="560" height="250" rx="14" fill="url(#sbglow)"/>' +
-        '<circle cx="470" cy="46" r="17" fill="rgba(255,255,255,.75)"/>' +
-        '<path d="M96 40h10l-7 178h-10zM454 40h10l-4 178h-10z" fill="#2A2380" opacity=".85"/>' +
-        '<ellipse cx="280" cy="224" rx="200" ry="9" fill="rgba(16,19,58,.10)"/>' +
-        '<rect x="52" y="38" width="456" height="118" rx="12" fill="#10133A"/>' +
-        '<rect x="60" y="46" width="440" height="102" rx="8" fill="none" stroke="rgba(169,166,245,.4)" stroke-width="1.5"/>' +
-        sceneText(segs, 280, 99, 400, 40, SCENE_DARK) +
-        '<text x="280" y="132" text-anchor="middle" font-family="Plus Jakarta Sans,Arial,sans-serif" font-size="10.5" font-weight="600" letter-spacing="2.2" fill="rgba(255,255,255,.42)">CALL TODAY</text>' +
-        '</svg>';
-    }
-    if (kind === "van") {
-      return '<svg viewBox="0 0 400 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">' +
-        '<defs><linearGradient id="svsky" x1="0" y1="0" x2="0" y2="1">' +
-        '<stop offset="0" stop-color="#E3E5F8"/><stop offset="1" stop-color="#F2F3FC"/></linearGradient></defs>' +
-        '<rect width="400" height="230" rx="14" fill="url(#svsky)"/>' +
-        '<path d="M14 96h30M6 116h38M14 136h30" stroke="rgba(79,70,229,.35)" stroke-width="5" stroke-linecap="round"/>' +
-        '<rect x="0" y="188" width="400" height="4" fill="rgba(16,19,58,.12)"/>' +
-        '<path d="M62 70a12 12 0 0112-12h196a12 12 0 0112 12v96H62z" fill="#FFFFFF" stroke="rgba(16,19,58,.14)"/>' +
-        '<path d="M282 82h44a10 10 0 018 4l22 30a12 12 0 012.5 7.4V158a8 8 0 01-8 8h-68z" fill="#FFFFFF" stroke="rgba(16,19,58,.14)"/>' +
-        '<path d="M292 92h30a6 6 0 015 2.6l16 22H292z" fill="#DDE0F5"/>' +
-        '<rect x="62" y="150" width="298" height="16" fill="rgba(79,70,229,.14)"/>' +
-        '<circle cx="118" cy="180" r="21" fill="#10133A"/><circle cx="118" cy="180" r="9" fill="#E8EAF7"/>' +
-        '<circle cx="312" cy="180" r="21" fill="#10133A"/><circle cx="312" cy="180" r="9" fill="#E8EAF7"/>' +
-        sceneText(segs, 172, 112, 190, 24, SCENE_LIGHT) +
-        '<text x="172" y="138" text-anchor="middle" font-family="Plus Jakarta Sans,Arial,sans-serif" font-size="9.5" font-weight="700" letter-spacing="1.8" fill="rgba(16,19,58,.4)">ON THE SIDE OF YOUR FLEET</text>' +
-        '</svg>';
-    }
-    // storefront
-    return '<svg viewBox="0 0 400 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">' +
-      '<defs><linearGradient id="sssky" x1="0" y1="0" x2="0" y2="1">' +
-      '<stop offset="0" stop-color="#E3E5F8"/><stop offset="1" stop-color="#F2F3FC"/></linearGradient></defs>' +
-      '<rect width="400" height="230" rx="14" fill="url(#sssky)"/>' +
-      '<rect x="46" y="30" width="308" height="52" rx="10" fill="#10133A"/>' +
-      sceneText(segs, 200, 57, 260, 26, SCENE_DARK) +
-      '<g>' +
-      ['#4F46E5', '#FFFFFF', '#4F46E5', '#FFFFFF', '#4F46E5', '#FFFFFF', '#4F46E5'].map(function (c, i) {
-        return '<path d="M' + (54 + i * 42) + ' 92h42v22a21 21 0 01-42 0z" fill="' + c + '" stroke="rgba(16,19,58,.12)"/>';
-      }).join("") +
-      '</g>' +
-      '<rect x="62" y="128" width="180" height="74" rx="6" fill="#FFFFFF" stroke="rgba(16,19,58,.14)"/>' +
-      '<path d="M74 188l38-44M96 194l52-58M138 196l40-46" stroke="rgba(79,70,229,.18)" stroke-width="7" stroke-linecap="round"/>' +
-      '<rect x="262" y="128" width="76" height="74" rx="6" fill="#DDE0F5" stroke="rgba(16,19,58,.14)"/>' +
-      '<circle cx="326" cy="168" r="3.5" fill="#10133A"/>' +
-      '<rect x="40" y="202" width="320" height="5" fill="rgba(16,19,58,.12)"/>' +
-      '</svg>';
-  }
-
-  function sceneNode(parts, s, kind) {
-    const card = suggestionNode(parts, s);
-    card.classList.add("scene", kind === "billboard" ? "scene-full" : "scene-half");
-    const body = document.createElement("div");
-    body.className = "scene-body";
-    while (card.firstChild) body.appendChild(card.firstChild);
-    const art = document.createElement("div");
-    art.className = "scene-art";
-    art.setAttribute("aria-hidden", "true");
-    art.innerHTML = sceneSvg(kind, sceneSegs(parts, s));
-    card.appendChild(art);
-    card.appendChild(body);
-    return card;
-  }
-
   var decodeState = { items: [], ctx: null, nice: "", zoneLen: 0, page: 0, forSale: false, forSaleUrl: null };
 
   function runDecode() {
@@ -568,13 +467,8 @@
 
     const start = decodeState.page * size;
     const end = Math.min(start + size, total);
-    const SCENES = ["billboard", "van", "store"];
     for (let i = start; i < end; i++) {
-      // First page: showcase the top three spellings as real-world signage.
-      const node = (decodeState.page === 0 && i < SCENES.length)
-        ? sceneNode(decodeState.ctx, decodeState.items[i], SCENES[i])
-        : suggestionNode(decodeState.ctx, decodeState.items[i]);
-      out.appendChild(node);
+      out.appendChild(suggestionNode(decodeState.ctx, decodeState.items[i]));
     }
 
     if (pages > 1) {
