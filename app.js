@@ -845,6 +845,16 @@
         scrollToTool();
       });
     });
+
+    // Deep link: ?n=8005551234 pre-fills and runs the decoder (used by the
+    // keypad-letters page's interactive dial pad).
+    const preN = new URLSearchParams(window.location.search).get("n");
+    if (preN && cleanDigits(preN).length >= MIN_WORD_LEN) {
+      el("phoneInput").value = cleanDigits(preN);
+      syncClear();
+      runDecode();
+      scrollToTool();
+    }
   }
 
   if (document.readyState === "loading") {

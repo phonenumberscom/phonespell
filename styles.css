@@ -205,6 +205,45 @@ section.section{padding:96px 0}
 .keypad-xl .kp-key b{font-size:26px}
 .keypad-xl .kp-key i{font-size:11px}
 @media (max-width:860px){.keypad,.keypad-note{max-width:none}}
+.keypad-note.center{text-align:center;max-width:none;margin-top:26px}
+
+/* index page: keypad column follows the copy while scrolling */
+#what-it-spells .answer-side{position:sticky;top:96px;align-self:start}
+
+/* interactive dial pad centerpiece (keypad-letters page) */
+.kp-live{max-width:430px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-br);border-radius:22px;box-shadow:0 28px 60px -22px rgba(40,30,120,.35);padding:20px;text-align:center}
+.kp-live .keypad{background:transparent;border:none;box-shadow:none;padding:14px 0 0;max-width:none}
+.kp-live .kp-key{font-family:var(--sans);cursor:pointer;transition:.12s ease;user-select:none}
+.kp-live .kp-key:hover{border-color:var(--ac)}
+.kp-live .kp-key:active{transform:scale(.95);background:var(--ac-soft)}
+.kp-live .kp-key.kp-sym{cursor:default}
+.kp-live .kp-key.kp-sym:hover{border-color:var(--line)}
+.kp-live .kp-key.kp-sym:active{transform:none;background:#fff}
+.kp-screen{background:#fff;border:1px solid var(--line-2);border-radius:14px;min-height:62px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:24px;font-weight:600;color:var(--ink);letter-spacing:.04em;padding:10px 14px}
+.kp-screen.empty{color:var(--ink-40);font-family:var(--sans);font-size:15px;font-weight:500;letter-spacing:0}
+.kp-sub{font-size:12.5px;color:var(--ink-58);margin-top:10px;min-height:19px}
+.kp-actions{display:flex;gap:10px;margin-top:18px}
+.kp-clear{flex:0 0 auto;border:1.5px solid var(--line-2);background:#fff;color:var(--ink-72);font:600 13.5px var(--sans);border-radius:12px;padding:13px 20px;cursor:pointer;transition:.15s}
+.kp-clear:hover{border-color:var(--ac);color:var(--ac)}
+.kp-go{flex:1;display:inline-flex;align-items:center;justify-content:center;background:var(--grad);color:#fff;font:700 14.5px var(--sans);border-radius:12px;padding:13px 18px;box-shadow:0 10px 22px -10px rgba(79,70,229,.6);transition:filter .15s}
+.kp-go:hover{filter:brightness(1.08)}
+
+/* word cheat-sheet chips */
+.word-chips{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:940px;margin:0 auto}
+.word-chip{background:var(--glass);border:1px solid var(--glass-br);border-radius:14px;box-shadow:var(--sh);padding:15px 16px;text-align:center}
+.word-chip b{display:block;font-size:13.5px;font-weight:700;letter-spacing:.06em;color:var(--ink)}
+.word-chip span{display:block;font-family:var(--mono);font-size:15px;font-weight:600;color:var(--ac);margin-top:3px}
+@media (max-width:860px){.word-chips{grid-template-columns:repeat(2,1fr)}}
+
+/* history prose */
+.history-prose{max-width:760px;margin:44px auto 0;font-size:15.5px;line-height:1.75;color:var(--ink-58);text-align:left}
+.history-prose p{margin-bottom:14px}
+.history-prose strong{color:var(--ink);font-weight:600}
+
+/* four-up card row */
+.cards.four{grid-template-columns:repeat(4,1fr)}
+@media (max-width:1000px){.cards.four{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.cards.four{grid-template-columns:1fr}}
 
 /* keypad-letters reference table */
 .ref-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--glass);border:1px solid var(--glass-br);border-radius:18px;box-shadow:var(--sh-card);overflow:hidden;font-size:14px;margin-top:22px}

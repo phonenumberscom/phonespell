@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phone Keypad Letters — What Letters Go With Each Number? | PhoneNumbers.com</title>
-  <meta name="description" content="The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ. Why keypads have letters, why 0 and 1 don't, and how to use them." />
+  <meta name="description" content="The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ. Try the interactive keypad, see why letters exist, and dial words as numbers." />
   <!-- NOTE: update the domain/path below to the page's real URL before launch. -->
   <link rel="canonical" href="https://www.phonenumbers.com/en-us/tools/phone-keypad-letters" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -13,7 +13,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PhoneNumbers.com" />
   <meta property="og:title" content="Phone Keypad Letters — What Letters Go With Each Number?" />
-  <meta property="og:description" content="The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ — plus why they exist and how to use them." />
+  <meta property="og:description" content="The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ — plus an interactive keypad and the story of how the letters got there." />
   <meta property="og:url" content="https://www.phonenumbers.com/en-us/tools/phone-keypad-letters" />
   <meta property="og:image" content="https://www.phonenumbers.com/og/vanity-number-generator.png" />
   <meta property="og:image:alt" content="PhoneNumbers.com phone keypad letters reference" />
@@ -24,14 +24,14 @@
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Phone Keypad Letters — What Letters Go With Each Number?" />
-  <meta name="twitter:description" content="2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ — the full telephone keypad letter map." />
+  <meta name="twitter:description" content="2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ — the full telephone keypad letter map, with an interactive dial pad." />
   <meta name="twitter:image" content="https://www.phonenumbers.com/og/vanity-number-generator.png" />
 
   <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;%F0%9F%93%9E&lt;/text&gt;&lt;/svg&gt;" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
 </head>
 <body>
   <!-- Header -->
@@ -60,12 +60,38 @@
       <h1>The letters on your<br /><span class="gt">phone keypad.</span></h1>
       <p class="hero-sub">
         Every number key from 2 to 9 carries three or four letters — the system behind
-        vanity numbers, T9 texting, and "press 2 for ABC". Here's the full map and the
-        story of how it got there.
+        vanity numbers, T9 texting, and dial-by-name directories. Tap it out below,
+        then read the story of how the letters got there.
       </p>
     </section>
 
-    <!-- Keypad + reference table -->
+    <!-- Interactive keypad centerpiece -->
+    <section class="tool" id="try-it">
+      <div class="kp-live">
+        <div class="kp-screen empty" id="kpScreen">Tap the keys</div>
+        <p class="kp-sub" id="kpSub">Dial any number — we'll track the letters as you go.</p>
+        <div class="keypad keypad-xl" aria-label="Interactive telephone keypad">
+          <button type="button" class="kp-key" data-d="1"><b>1</b><i></i></button>
+          <button type="button" class="kp-key" data-d="2"><b>2</b><i>ABC</i></button>
+          <button type="button" class="kp-key" data-d="3"><b>3</b><i>DEF</i></button>
+          <button type="button" class="kp-key" data-d="4"><b>4</b><i>GHI</i></button>
+          <button type="button" class="kp-key" data-d="5"><b>5</b><i>JKL</i></button>
+          <button type="button" class="kp-key" data-d="6"><b>6</b><i>MNO</i></button>
+          <button type="button" class="kp-key" data-d="7"><b>7</b><i>PQRS</i></button>
+          <button type="button" class="kp-key" data-d="8"><b>8</b><i>TUV</i></button>
+          <button type="button" class="kp-key" data-d="9"><b>9</b><i>WXYZ</i></button>
+          <button type="button" class="kp-key kp-sym" data-d=""><b>*</b><i></i></button>
+          <button type="button" class="kp-key" data-d="0"><b>0</b><i></i></button>
+          <button type="button" class="kp-key kp-sym" data-d=""><b>#</b><i></i></button>
+        </div>
+        <div class="kp-actions">
+          <button type="button" class="kp-clear" id="kpClear">Clear</button>
+          <a class="kp-go" id="kpGo" href="index.html">See what it spells →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Letter map -->
     <section class="section" id="letter-map">
       <div class="wrap">
         <div class="answer-grid">
@@ -73,48 +99,58 @@
             <span class="eyebrow">The Letter Map</span>
             <h2>What letters go with <span class="gt">each number?</span></h2>
             <p>On every modern telephone keypad, the digits 2 through 9 each carry a group of letters: <strong>2&nbsp;=&nbsp;ABC, 3&nbsp;=&nbsp;DEF, 4&nbsp;=&nbsp;GHI, 5&nbsp;=&nbsp;JKL, 6&nbsp;=&nbsp;MNO, 7&nbsp;=&nbsp;PQRS, 8&nbsp;=&nbsp;TUV, 9&nbsp;=&nbsp;WXYZ</strong>. The digits 1 and 0 carry no letters at all.</p>
+            <h3>Reading a number as letters</h3>
+            <p>To convert phone number letters in either direction, just follow the map: each letter is dialed as its key's digit, so FLOWERS becomes 356-9377 and PLUMBER becomes 758-6237. Going the other way is trickier — each digit could be any of its three or four letters, which is why finding the words hidden in a number is a job for our <a href="index.html">phone number to letters converter</a>.</p>
+            <h3>Where Q and Z live</h3>
+            <p>Q sits on the <strong>7</strong> key and Z on the <strong>9</strong> key. Neither letter existed on old rotary dials — they were skipped so each hole could hold exactly three letters. The modern ITU E.161 standard added them back so the whole alphabet is dialable.</p>
+          </div>
+          <div class="answer-side">
             <table class="ref-table">
               <caption>Phone number letters by digit</caption>
-              <thead><tr><th scope="col">Digit</th><th scope="col">Letters</th><th scope="col">Example word</th></tr></thead>
+              <thead><tr><th scope="col">Digit</th><th scope="col">Letters</th><th scope="col">Example</th></tr></thead>
               <tbody>
-                <tr><td class="rd">1</td><td class="rl none">none</td><td class="re">—</td></tr>
+                <tr><td class="rd">1</td><td class="rl none">none</td><td class="re">signaling / long distance</td></tr>
                 <tr><td class="rd">2</td><td class="rl">A B C</td><td class="re">CAB → 222</td></tr>
                 <tr><td class="rd">3</td><td class="rl">D E F</td><td class="re">FED → 333</td></tr>
                 <tr><td class="rd">4</td><td class="rl">G H I</td><td class="re">HI → 44</td></tr>
-                <tr><td class="rd">5</td><td class="rl">J K L</td><td class="re">LK in TALK → 8255</td></tr>
+                <tr><td class="rd">5</td><td class="rl">J K L</td><td class="re">KL in KALE → 5253</td></tr>
                 <tr><td class="rd">6</td><td class="rl">M N O</td><td class="re">ON → 66</td></tr>
-                <tr><td class="rd">7</td><td class="rl">P Q R S</td><td class="re">PQRS in 1-800-PQRS…</td></tr>
+                <tr><td class="rd">7</td><td class="rl">P Q R S</td><td class="re">SPQR → 7777</td></tr>
                 <tr><td class="rd">8</td><td class="rl">T U V</td><td class="re">TV → 88</td></tr>
-                <tr><td class="rd">9</td><td class="rl">W X Y Z</td><td class="re">WXYZ ends FLOWERS → 9377</td></tr>
+                <tr><td class="rd">9</td><td class="rl">W X Y Z</td><td class="re">WYZ in FLOWERS → 9377</td></tr>
                 <tr><td class="rd">0</td><td class="rl none">none</td><td class="re">operator</td></tr>
               </tbody>
             </table>
-            <p class="keypad-note">Handy check: FLOWERS = 356-9377, PLUMBER = 758-6237. Try your own number in our <a href="index.html">phone number to letters converter</a>.</p>
-          </div>
-          <div class="answer-side">
-            <h3 class="keypad-cap">The standard keypad (ITU E.161)</h3>
-            <div class="keypad keypad-xl" role="img" aria-label="Telephone keypad letter map: 2 ABC, 3 DEF, 4 GHI, 5 JKL, 6 MNO, 7 PQRS, 8 TUV, 9 WXYZ. 1 and 0 carry no letters.">
-              <div class="kp-key"><b>1</b><i></i></div>
-              <div class="kp-key"><b>2</b><i>ABC</i></div>
-              <div class="kp-key"><b>3</b><i>DEF</i></div>
-              <div class="kp-key"><b>4</b><i>GHI</i></div>
-              <div class="kp-key"><b>5</b><i>JKL</i></div>
-              <div class="kp-key"><b>6</b><i>MNO</i></div>
-              <div class="kp-key"><b>7</b><i>PQRS</i></div>
-              <div class="kp-key"><b>8</b><i>TUV</i></div>
-              <div class="kp-key"><b>9</b><i>WXYZ</i></div>
-              <div class="kp-key kp-sym"><b>*</b><i></i></div>
-              <div class="kp-key"><b>0</b><i></i></div>
-              <div class="kp-key kp-sym"><b>#</b><i></i></div>
-            </div>
-            <p class="keypad-note">The same layout appears on every mobile dial pad, desk phone, and door-entry keypad in the world.</p>
+            <p class="keypad-note">The same ITU E.161 layout appears on every mobile dial pad, desk phone, and door-entry keypad in the world.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Word cheat sheet -->
+    <section class="section tint" id="cheat-sheet">
+      <div class="wrap">
+        <div class="shead">
+          <span class="eyebrow">Cheat Sheet</span>
+          <h2>Common words <span class="gt">as phone numbers</span></h2>
+          <p>A few words every vanity-number hunter should know by heart — dial the digits, spell the word.</p>
+        </div>
+        <div class="word-chips">
+          <div class="word-chip"><b>HELP</b><span>4357</span></div>
+          <div class="word-chip"><b>CASH</b><span>2274</span></div>
+          <div class="word-chip"><b>TAXI</b><span>8294</span></div>
+          <div class="word-chip"><b>PIZZA</b><span>74992</span></div>
+          <div class="word-chip"><b>DOCTOR</b><span>362867</span></div>
+          <div class="word-chip"><b>LAWYER</b><span>529937</span></div>
+          <div class="word-chip"><b>PLUMBER</b><span>7586237</span></div>
+          <div class="word-chip"><b>FLOWERS</b><span>3569377</span></div>
+        </div>
+        <p class="keypad-note center">Want the digits for a different word? The <a href="index.html">Word → Number converter</a> spells anything instantly.</p>
+      </div>
+    </section>
+
     <!-- History -->
-    <section class="section tint" id="history">
+    <section class="section" id="history">
       <div class="wrap">
         <div class="shead">
           <span class="eyebrow">Where It Came From</span>
@@ -138,10 +174,46 @@
             <p>The same letter groups powered T9 predictive text — tap 4-3-5-5-6 and the phone guessed "hello." Today the map lives on in vanity numbers and phone menus.</p>
           </div>
         </div>
+        <div class="history-prose">
+          <p>In the exchange-name era, a phone number was written with its first letters capitalized — <strong>PEnnsylvania 6-5000</strong>, <strong>KLondike 5</strong>, <strong>MUrray Hill 7</strong> — and the capitals told you which letters to dial. The format even made it into pop culture: Glenn Miller's "PEnnsylvania 6-5000" is literally a phone number, and Hollywood's fictional "KLondike 5" numbers are why movie characters still recite numbers starting with 555.</p>
+          <p>When direct long-distance dialing arrived, exchange names couldn't scale — too many name collisions across cities — so the Bell System phased in <strong>all-number calling</strong> through the 1960s. The letters could have died there. Instead, businesses realized the map turned a phone number into a word you could advertise, and the <strong>phoneword</strong> was born: first on radio jingles, then on billboards, trucks, and 1-800 lines that became brands in their own right.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Why 0 and 1 are blank + uses -->
+    <!-- Still everywhere today -->
+    <section class="section tint" id="today">
+      <div class="wrap">
+        <div class="shead">
+          <span class="eyebrow">Still Everywhere</span>
+          <h2>Where keypad letters <span class="gt">show up today</span></h2>
+        </div>
+        <div class="cards four">
+          <div class="step-card">
+            <span class="card-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 9h8M8 12.5h8M8 16h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>Dial-by-name directories</h3>
+            <p>"Enter the first three letters of your party's last name" — corporate phone systems still spell names with the keypad map.</p>
+          </div>
+          <div class="step-card">
+            <span class="card-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12l3 5-9 13L3 8z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M3 8h18" stroke="currentColor" stroke-width="1.3"/></svg></span>
+            <h3>Vanity numbers</h3>
+            <p>1-800-FLOWERS and friends — the letters make a number a brand. It's the whole premise of a premium phone number.</p>
+          </div>
+          <div class="step-card">
+            <span class="card-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="2.5" width="12" height="19" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M10 18.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>
+            <h3>T9-style input</h3>
+            <p>Flip phones, car systems, and TV remotes still use multi-tap and predictive text built on the same digit-letter groups.</p>
+          </div>
+          <div class="step-card">
+            <span class="card-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="10" width="16" height="11" rx="3" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 018 0v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="15.5" r="1.8" fill="currentColor"/></svg></span>
+            <h3>PIN &amp; code mnemonics</h3>
+            <p>A hard-to-guess PIN that spells a word is easy to remember — the keypad map works on door codes and voicemail PINs too.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why 0 and 1 are blank + cross-sell -->
     <section class="section" id="zero-one">
       <div class="wrap">
         <div class="shead">
@@ -183,7 +255,11 @@
           </details>
           <details class="faq-q">
             <summary>Why do phone keypads have letters?<span class="faq-x"></span></summary>
-            <div class="faq-a">Letters were added in the 1920s so callers could dial memorable exchange names like "PEnnsylvania 6-5000" instead of raw digits. The system survived into touch-tone phones and now powers vanity numbers, T9-style texting, and "press 2 for ABC" phone menus.</div>
+            <div class="faq-a">Letters were added in the 1920s so callers could dial memorable exchange names like "PEnnsylvania 6-5000" instead of raw digits. The system survived into touch-tone phones and now powers vanity numbers, T9-style texting, and dial-by-name directories.</div>
+          </details>
+          <details class="faq-q">
+            <summary>How do I dial a phone number with letters in it?<span class="faq-x"></span></summary>
+            <div class="faq-a">Press the digit that carries each letter: 1-800-FLOWERS is dialed 1-800-356-9377. The letters are only a memory aid — the phone network only ever sees digits, so any keypad can dial any phoneword.</div>
           </details>
           <details class="faq-q">
             <summary>Where are Q and Z on the phone keypad?<span class="faq-x"></span></summary>
@@ -192,6 +268,10 @@
           <details class="faq-q">
             <summary>Which numbers have no letters?<span class="faq-x"></span></summary>
             <div class="faq-a">1 and 0. On early phone systems 1 was reserved for signaling and long-distance prefixes and 0 rang the operator, so neither was ever assigned letters — they always stay as digits in a phoneword.</div>
+          </details>
+          <details class="faq-q">
+            <summary>Do all phones use the same keypad letters?<span class="faq-x"></span></summary>
+            <div class="faq-a">Yes — the ITU E.161 standard puts the same letters on every modern device, from smartphones to desk phones to door-entry keypads. Only antique dials differ: many skipped Q and Z, and some European rotary phones carried no letters at all.</div>
           </details>
           <details class="faq-q">
             <summary>How do I type letters as a phone number?<span class="faq-x"></span></summary>
@@ -271,7 +351,7 @@
         "@id": "https://www.phonenumbers.com/en-us/tools/phone-keypad-letters#webpage",
         "url": "https://www.phonenumbers.com/en-us/tools/phone-keypad-letters",
         "name": "Phone Keypad Letters — What Letters Go With Each Number?",
-        "description": "The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ. Why keypads have letters, why 0 and 1 don't, and how to use them.",
+        "description": "The letters on a telephone keypad: 2=ABC, 3=DEF, 4=GHI, 5=JKL, 6=MNO, 7=PQRS, 8=TUV, 9=WXYZ. Try the interactive keypad, see why letters exist, and dial words as numbers.",
         "inLanguage": "en-US",
         "breadcrumb": { "@id": "https://www.phonenumbers.com/en-us/tools/phone-keypad-letters#breadcrumb" }
       },
@@ -295,7 +375,12 @@
           {
             "@type": "Question",
             "name": "Why do phone keypads have letters?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Letters were added in the 1920s so callers could dial memorable exchange names like PEnnsylvania 6-5000 instead of raw digits. The system survived into touch-tone phones and now powers vanity numbers, T9-style texting, and press-2-for-ABC phone menus." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Letters were added in the 1920s so callers could dial memorable exchange names like PEnnsylvania 6-5000 instead of raw digits. The system survived into touch-tone phones and now powers vanity numbers, T9-style texting, and dial-by-name directories." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I dial a phone number with letters in it?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Press the digit that carries each letter: 1-800-FLOWERS is dialed 1-800-356-9377. The letters are only a memory aid — the phone network only ever sees digits, so any keypad can dial any phoneword." }
           },
           {
             "@type": "Question",
@@ -309,6 +394,11 @@
           },
           {
             "@type": "Question",
+            "name": "Do all phones use the same keypad letters?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes — the ITU E.161 standard puts the same letters on every modern device, from smartphones to desk phones to door-entry keypads. Only antique dials differ: many skipped Q and Z, and some European rotary phones carried no letters at all." }
+          },
+          {
+            "@type": "Question",
             "name": "How do I type letters as a phone number?",
             "acceptedAnswer": { "@type": "Answer", "text": "Replace each letter with its keypad digit — FLOWERS becomes 356-9377. Or use the free PhoneNumbers.com spelling tool, which converts words to numbers and numbers to words instantly." }
           }
@@ -316,6 +406,49 @@
       }
     ]
   }
+  </script>
+
+  <script>
+  // Interactive dial pad: track tapped digits, show each key's letters,
+  // and deep-link into the decoder via index.html?n=DIGITS.
+  (function () {
+    var MAP = { 2: "ABC", 3: "DEF", 4: "GHI", 5: "JKL", 6: "MNO", 7: "PQRS", 8: "TUV", 9: "WXYZ" };
+    var screen = document.getElementById("kpScreen");
+    var sub = document.getElementById("kpSub");
+    var go = document.getElementById("kpGo");
+    var digits = "";
+
+    function render() {
+      if (!digits) {
+        screen.classList.add("empty");
+        screen.textContent = "Tap the keys";
+        sub.textContent = "Dial any number — we'll track the letters as you go.";
+        go.href = "index.html";
+        return;
+      }
+      screen.classList.remove("empty");
+      screen.textContent = digits.replace(/(\d{3})(?=\d)/g, "$1 ");
+      var last = digits[digits.length - 1];
+      sub.textContent = MAP[last]
+        ? "Key " + last + " carries " + MAP[last].split("").join(" · ")
+        : "Key " + last + " has no letters — it stays a digit";
+      go.href = "index.html?n=" + digits;
+    }
+
+    document.querySelectorAll(".kp-live .kp-key").forEach(function (k) {
+      k.addEventListener("click", function () {
+        var d = k.getAttribute("data-d");
+        if (!d) return;
+        if (digits.length < 11) digits += d;
+        render();
+      });
+    });
+    document.getElementById("kpClear").addEventListener("click", function () {
+      digits = "";
+      render();
+    });
+    render();
+  })();
   </script>
 </body>
 </html>
