@@ -192,15 +192,14 @@ section.section{padding:96px 0}
 .answer-copy p{font-size:15.5px;line-height:1.7;color:var(--ink-58);margin-bottom:14px}
 .answer-copy h3{font-size:17px;font-weight:700;letter-spacing:-.01em;color:var(--ink);margin:26px 0 8px}
 .answer-copy strong{color:var(--ink);font-weight:600}
-.keypad-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--glass);border:1px solid var(--glass-br);border-radius:18px;box-shadow:var(--sh-card);overflow:hidden;font-size:14.5px}
-.keypad-table caption{caption-side:top;text-align:left;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);padding:0 0 12px 4px}
-.keypad-table th{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);text-align:left;padding:14px 18px 10px;border-bottom:1px solid var(--line)}
-.keypad-table td{padding:9px 18px;border-bottom:1px solid var(--line)}
-.keypad-table tr:last-child td{border-bottom:none}
-.keypad-table .kd{font-family:var(--mono);font-weight:600;font-size:16px;color:var(--head);width:64px}
-.keypad-table .kl{font-family:var(--mono);font-weight:500;letter-spacing:.14em;color:var(--ink)}
-.keypad-table .kl.none{font-family:var(--sans);letter-spacing:0;font-size:13px;color:var(--ink-40);font-style:italic}
-.keypad-note{margin-top:14px;font-size:13px;line-height:1.6;color:var(--ink-40);padding:0 4px}
+.keypad-cap{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:0 0 12px 4px}
+.keypad{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;background:var(--glass);border:1px solid var(--glass-br);border-radius:20px;box-shadow:var(--sh-card);padding:18px;max-width:340px}
+.kp-key{background:#fff;border:1px solid var(--line);border-radius:14px;text-align:center;padding:13px 4px 11px;box-shadow:0 1px 2px rgba(16,19,58,.06)}
+.kp-key b{display:block;font-family:var(--mono);font-size:22px;font-weight:600;color:var(--head);line-height:1.1}
+.kp-key i{display:block;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--ac);margin-top:4px;min-height:13px}
+.kp-key.kp-sym b{color:var(--ink-40)}
+.keypad-note{margin-top:14px;font-size:13px;line-height:1.6;color:var(--ink-40);padding:0 4px;max-width:340px}
+@media (max-width:860px){.keypad,.keypad-note{max-width:none}}
 @media (max-width:860px){.answer-grid{grid-template-columns:1fr;gap:36px}}
 
 /* ---------- Showcase ---------- */

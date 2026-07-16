@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=8" />
+  <link rel="stylesheet" href="styles.css?v=9" />
 </head>
 <body>
   <!-- Header -->
@@ -139,22 +139,21 @@
             <p>Numbers heavy in 0s and 1s may spell nothing at all, since those digits carry no letters. If that's you, flip the tool to <em>Word → Number</em>: pick the word you wish your number spelled, convert it to digits, and search our marketplace for a real phone number that matches — something a spelling tool alone can't do.</p>
           </div>
           <div class="answer-side">
-            <table class="keypad-table">
-              <caption>Phone keypad letter map (T9-style)</caption>
-              <thead><tr><th scope="col">Digit</th><th scope="col">Letters</th></tr></thead>
-              <tbody>
-                <tr><td class="kd">1</td><td class="kl none">no letters</td></tr>
-                <tr><td class="kd">2</td><td class="kl">A&nbsp;B&nbsp;C</td></tr>
-                <tr><td class="kd">3</td><td class="kl">D&nbsp;E&nbsp;F</td></tr>
-                <tr><td class="kd">4</td><td class="kl">G&nbsp;H&nbsp;I</td></tr>
-                <tr><td class="kd">5</td><td class="kl">J&nbsp;K&nbsp;L</td></tr>
-                <tr><td class="kd">6</td><td class="kl">M&nbsp;N&nbsp;O</td></tr>
-                <tr><td class="kd">7</td><td class="kl">P&nbsp;Q&nbsp;R&nbsp;S</td></tr>
-                <tr><td class="kd">8</td><td class="kl">T&nbsp;U&nbsp;V</td></tr>
-                <tr><td class="kd">9</td><td class="kl">W&nbsp;X&nbsp;Y&nbsp;Z</td></tr>
-                <tr><td class="kd">0</td><td class="kl none">no letters</td></tr>
-              </tbody>
-            </table>
+            <p class="keypad-cap">Phone keypad letter map (T9-style)</p>
+            <div class="keypad" role="img" aria-label="Telephone keypad letter map: 2 ABC, 3 DEF, 4 GHI, 5 JKL, 6 MNO, 7 PQRS, 8 TUV, 9 WXYZ. 1 and 0 carry no letters.">
+              <div class="kp-key"><b>1</b><i></i></div>
+              <div class="kp-key"><b>2</b><i>ABC</i></div>
+              <div class="kp-key"><b>3</b><i>DEF</i></div>
+              <div class="kp-key"><b>4</b><i>GHI</i></div>
+              <div class="kp-key"><b>5</b><i>JKL</i></div>
+              <div class="kp-key"><b>6</b><i>MNO</i></div>
+              <div class="kp-key"><b>7</b><i>PQRS</i></div>
+              <div class="kp-key"><b>8</b><i>TUV</i></div>
+              <div class="kp-key"><b>9</b><i>WXYZ</i></div>
+              <div class="kp-key kp-sym"><b>*</b><i></i></div>
+              <div class="kp-key"><b>0</b><i></i></div>
+              <div class="kp-key kp-sym"><b>#</b><i></i></div>
+            </div>
             <p class="keypad-note">0 and 1 were reserved for operator and long-distance codes on early rotary phones, which is why they've never carried letters — they pass through any phoneword unchanged.</p>
           </div>
         </div>
@@ -537,11 +536,11 @@
 
   <!-- ?v= mirrors the styles.css version — bump BOTH whenever any JS or CSS changes,
        or GitHub Pages/browser caches keep serving the old files. -->
-  <script src="countries.js?v=8"></script>   <!-- country calling codes for the picker -->
-  <script src="words.js?v=8"></script>       <!-- curated marketing words (ranked first) -->
-  <script src="dictionary.js?v=8"></script>  <!-- YOUR custom dictionary (ranked next) -->
-  <script src="words-extra.js?v=8"></script> <!-- generic system breadth list (ranked last) -->
-  <script src="inventory.js?v=8"></script>   <!-- YOUR for-sale numbers -->
-  <script src="app.js?v=8"></script>
+  <script src="countries.js?v=9"></script>   <!-- country calling codes for the picker -->
+  <script src="words.js?v=9"></script>       <!-- curated marketing words (ranked first) -->
+  <script src="dictionary.js?v=9"></script>  <!-- YOUR custom dictionary (ranked next) -->
+  <script src="words-extra.js?v=9"></script> <!-- generic system breadth list (ranked last) -->
+  <script src="inventory.js?v=9"></script>   <!-- YOUR for-sale numbers -->
+  <script src="app.js?v=9"></script>
 </body>
 </html>
