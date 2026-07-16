@@ -199,7 +199,23 @@ section.section{padding:96px 0}
 .kp-key i{display:block;font-style:normal;font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--ac);margin-top:4px;min-height:13px}
 .kp-key.kp-sym b{color:var(--ink-40)}
 .keypad-note{margin-top:14px;font-size:13px;line-height:1.6;color:var(--ink-40);padding:0 4px;max-width:340px}
+.keypad-note a{color:var(--ac);text-decoration:underline;text-underline-offset:2px}
+.keypad-xl{max-width:380px;gap:12px;padding:22px}
+.keypad-xl .kp-key{padding:16px 4px 13px}
+.keypad-xl .kp-key b{font-size:26px}
+.keypad-xl .kp-key i{font-size:11px}
 @media (max-width:860px){.keypad,.keypad-note{max-width:none}}
+
+/* keypad-letters reference table */
+.ref-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--glass);border:1px solid var(--glass-br);border-radius:18px;box-shadow:var(--sh-card);overflow:hidden;font-size:14px;margin-top:22px}
+.ref-table caption{caption-side:top;text-align:left;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);padding:0 0 12px 4px}
+.ref-table th{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-40);text-align:left;padding:13px 16px 9px;border-bottom:1px solid var(--line)}
+.ref-table td{padding:8px 16px;border-bottom:1px solid var(--line)}
+.ref-table tr:last-child td{border-bottom:none}
+.ref-table .rd{font-family:var(--mono);font-weight:600;font-size:16px;color:var(--head);width:56px}
+.ref-table .rl{font-family:var(--mono);font-weight:500;letter-spacing:.14em;color:var(--ink);white-space:nowrap}
+.ref-table .rl.none{font-family:var(--sans);letter-spacing:0;font-size:12.5px;color:var(--ink-40);font-style:italic}
+.ref-table .re{font-size:12.5px;color:var(--ink-58)}
 @media (max-width:860px){.answer-grid{grid-template-columns:1fr;gap:36px}}
 
 /* ---------- Showcase ---------- */
