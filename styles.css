@@ -209,6 +209,13 @@ section.section{padding:96px 0}
 
 /* index page: keypad column follows the copy while scrolling */
 #what-it-spells .answer-side{position:sticky;top:96px;align-self:start}
+/* ...and its keys dial into the decoder */
+#dialPad .kp-key{font-family:var(--sans);cursor:pointer;transition:.12s ease;user-select:none}
+#dialPad .kp-key:hover{border-color:var(--ac)}
+#dialPad .kp-key:active{transform:scale(.95);background:var(--ac-soft)}
+#dialPad .kp-key.kp-sym{cursor:default}
+#dialPad .kp-key.kp-sym:hover{border-color:var(--line)}
+#dialPad .kp-key.kp-sym:active{transform:none;background:#fff}
 
 /* interactive dial pad centerpiece (keypad-letters page) */
 .kp-live{max-width:430px;margin:0 auto;background:var(--glass);border:1px solid var(--glass-br);border-radius:22px;box-shadow:0 28px 60px -22px rgba(40,30,120,.35);padding:20px;text-align:center}

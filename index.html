@@ -31,7 +31,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
 </head>
 <body>
   <!-- Header -->
@@ -140,21 +140,21 @@
           </div>
           <div class="answer-side">
             <h3 class="keypad-cap">Phone keypad letters (T9-style map)</h3>
-            <div class="keypad" role="img" aria-label="Telephone keypad letter map: 2 ABC, 3 DEF, 4 GHI, 5 JKL, 6 MNO, 7 PQRS, 8 TUV, 9 WXYZ. 1 and 0 carry no letters.">
-              <div class="kp-key"><b>1</b><i></i></div>
-              <div class="kp-key"><b>2</b><i>ABC</i></div>
-              <div class="kp-key"><b>3</b><i>DEF</i></div>
-              <div class="kp-key"><b>4</b><i>GHI</i></div>
-              <div class="kp-key"><b>5</b><i>JKL</i></div>
-              <div class="kp-key"><b>6</b><i>MNO</i></div>
-              <div class="kp-key"><b>7</b><i>PQRS</i></div>
-              <div class="kp-key"><b>8</b><i>TUV</i></div>
-              <div class="kp-key"><b>9</b><i>WXYZ</i></div>
-              <div class="kp-key kp-sym"><b>*</b><i></i></div>
-              <div class="kp-key"><b>0</b><i></i></div>
-              <div class="kp-key kp-sym"><b>#</b><i></i></div>
+            <div class="keypad" id="dialPad" aria-label="Telephone keypad letter map — tap keys to dial into the decoder. 2 ABC, 3 DEF, 4 GHI, 5 JKL, 6 MNO, 7 PQRS, 8 TUV, 9 WXYZ. 1 and 0 carry no letters.">
+              <button type="button" class="kp-key" data-d="1"><b>1</b><i></i></button>
+              <button type="button" class="kp-key" data-d="2"><b>2</b><i>ABC</i></button>
+              <button type="button" class="kp-key" data-d="3"><b>3</b><i>DEF</i></button>
+              <button type="button" class="kp-key" data-d="4"><b>4</b><i>GHI</i></button>
+              <button type="button" class="kp-key" data-d="5"><b>5</b><i>JKL</i></button>
+              <button type="button" class="kp-key" data-d="6"><b>6</b><i>MNO</i></button>
+              <button type="button" class="kp-key" data-d="7"><b>7</b><i>PQRS</i></button>
+              <button type="button" class="kp-key" data-d="8"><b>8</b><i>TUV</i></button>
+              <button type="button" class="kp-key" data-d="9"><b>9</b><i>WXYZ</i></button>
+              <button type="button" class="kp-key kp-sym"><b>*</b><i></i></button>
+              <button type="button" class="kp-key" data-d="0"><b>0</b><i></i></button>
+              <button type="button" class="kp-key kp-sym"><b>#</b><i></i></button>
             </div>
-            <p class="keypad-note">0 and 1 were reserved for operator and long-distance codes on early rotary phones, which is why they've never carried letters — they pass through any phoneword unchanged. Full reference: <a href="keypad-letters.html">phone keypad letters, explained</a>.</p>
+            <p class="keypad-note">Tap the keys — they dial straight into the decoder above. 0 and 1 carry no letters (they were reserved for operator and long-distance codes on early rotary phones) and pass through any phoneword unchanged. Full reference: <a href="keypad-letters.html">phone keypad letters, explained</a>.</p>
           </div>
         </div>
       </div>
@@ -546,11 +546,11 @@
 
   <!-- ?v= mirrors the styles.css version — bump BOTH whenever any JS or CSS changes,
        or GitHub Pages/browser caches keep serving the old files. -->
-  <script src="countries.js?v=12"></script>   <!-- country calling codes for the picker -->
-  <script src="words.js?v=12"></script>       <!-- curated marketing words (ranked first) -->
-  <script src="dictionary.js?v=12"></script>  <!-- YOUR custom dictionary (ranked next) -->
-  <script src="words-extra.js?v=12"></script> <!-- generic system breadth list (ranked last) -->
-  <script src="inventory.js?v=12"></script>   <!-- YOUR for-sale numbers -->
-  <script src="app.js?v=12"></script>
+  <script src="countries.js?v=13"></script>   <!-- country calling codes for the picker -->
+  <script src="words.js?v=13"></script>       <!-- curated marketing words (ranked first) -->
+  <script src="dictionary.js?v=13"></script>  <!-- YOUR custom dictionary (ranked next) -->
+  <script src="words-extra.js?v=13"></script> <!-- generic system breadth list (ranked last) -->
+  <script src="inventory.js?v=13"></script>   <!-- YOUR for-sale numbers -->
+  <script src="app.js?v=13"></script>
 </body>
 </html>

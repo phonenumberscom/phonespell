@@ -846,6 +846,22 @@
       });
     });
 
+    // On-page dial pad (answer section): taps append to the decoder input
+    // and re-decode live.
+    const dialPad = document.getElementById("dialPad");
+    if (dialPad) {
+      dialPad.querySelectorAll(".kp-key[data-d]").forEach(function (k) {
+        k.addEventListener("click", function () {
+          switchMode("decode");
+          const cur = cleanDigits(el("phoneInput").value);
+          if (cur.length >= 15) return;
+          el("phoneInput").value = cur + k.getAttribute("data-d");
+          syncClear();
+          runDecode();
+        });
+      });
+    }
+
     // Deep link: ?n=8005551234 pre-fills and runs the decoder (used by the
     // keypad-letters page's interactive dial pad).
     const preN = new URLSearchParams(window.location.search).get("n");
